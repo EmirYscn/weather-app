@@ -9,6 +9,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 3em;
 }
 nav {
   margin-top: 2em;
@@ -54,4 +55,36 @@ input[type="text"] {
 .search-input::placeholder,
 .search-icon {
   color: rgba(0, 0, 0, 0.25);
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.section-weather {
+  display: flex;
+}
+
+.weather-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather-main-top {
+  display: flex;
+  align-items: center;
+}
+.weather-main-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.weather-details {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 2em;
 }
