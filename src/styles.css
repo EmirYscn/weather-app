@@ -1,4 +1,4 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -87,4 +87,171 @@ input[type="text"] {
   display: grid;
   grid-template-columns: auto auto auto;
   gap: 2em;
+} */
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  height: 100vh;
+  background: linear-gradient(90deg, #109ab3, #460574);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3em;
+  font-family: "Arial", sans-serif;
+}
+
+/* Navigation styling */
+nav {
+  margin-top: 2em;
+}
+
+/* Input field styling */
+input[type="text"] {
+  padding: 10px;
+  border-radius: 16px;
+  outline: none;
+  border: none;
+  width: 256px;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+  width: 300px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Search button styling */
+.search-button {
+  outline: none;
+  border: none;
+  background: none;
+}
+
+/* Search container styling */
+.search {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  border-radius: 28px;
+  background: rgba(246, 246, 246, 0.8);
+  transition: box-shadow 0.25s, background 0.25s;
+}
+
+.search:focus-within {
+  background: rgba(241, 241, 241, 0.9);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Search input styling */
+.search-input {
+  font-size: 16px;
+  color: #333;
+  margin-left: 14px;
+  outline: none;
+  border: none;
+  background: transparent;
+  width: 300px;
+}
+
+.search-input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* Search icon styling */
+.search-icon {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.5);
+  transition: color 0.3s;
+}
+
+.search-icon:hover {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* Main container styling */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  gap: 2em;
+}
+
+/* Weather section styling */
+.section-weather {
+  display: flex;
+  gap: 2em;
+}
+
+/* Weather main section styling */
+.weather-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5em;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+}
+
+.weather-main:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Weather main top styling */
+.weather-main-top {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 1em;
+  color: #fff;
+  font-size: 1.2em;
+}
+
+.weather-main-top i {
+  font-size: 2em;
+  color: #ffd700; /* Example for icon color, can be changed */
+}
+
+/* Weather main bottom styling */
+.weather-main-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  font-size: 1em;
+}
+
+.weather-main-bottom span {
+  margin-top: 0.5em;
+}
+
+/* Weather details styling */
+.weather-details {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 2em;
+}
+
+/* Style individual weather detail items */
+.weather-details > * {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1em;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.weather-details > *:hover {
+  transform: scale(1.05);
 }
