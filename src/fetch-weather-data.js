@@ -4,7 +4,7 @@ async function fetchWeatherData(location = "istanbul") {
   try {
     const weather_api = `https://api.weatherapi.com/v1/forecast.json?key=${
       config.apiKey
-    }&q=${location.toLowerCase()}&days=3`;
+    }&q=${location.toLowerCase()}&days=4`;
 
     const response = await fetch(weather_api);
     const weatherData = await response.json();
@@ -46,6 +46,20 @@ function processData(data) {
             maxtemp_f: data.forecast.forecastday[2].day.maxtemp_f,
             mintemp_c: data.forecast.forecastday[2].day.mintemp_c,
             mintemp_f: data.forecast.forecastday[2].day.mintemp_f,
+          },
+        },
+        {
+          date: data.forecast.forecastday[3].date,
+          astro: {
+            sunset: data.forecast.forecastday[3].astro.sunset,
+            sunrise: data.forecast.forecastday[3].astro.sunrise,
+          },
+          day: {
+            condition: { ...data.forecast.forecastday[3].day.condition },
+            maxtemp_c: data.forecast.forecastday[3].day.maxtemp_c,
+            maxtemp_f: data.forecast.forecastday[3].day.maxtemp_f,
+            mintemp_c: data.forecast.forecastday[3].day.mintemp_c,
+            mintemp_f: data.forecast.forecastday[3].day.mintemp_f,
           },
         },
       ],

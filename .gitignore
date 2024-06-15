@@ -1,2 +1,4 @@
 src/config.js
 node_modules
+dist/images
+src/images

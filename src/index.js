@@ -1,5 +1,5 @@
 import "./styles.css";
 
-import { init_search } from "./dom-manip";
+import { initializeSearchHandlers } from "./dom-manip";
 
-init_search();
+initializeSearchHandlers();
