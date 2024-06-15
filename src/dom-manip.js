@@ -1,7 +1,7 @@
 import { getWeatherData } from "./fetch-weather-data";
 
 const degrees = {
-  current: "f", // TODO switch to c or f
+  current: "c", // TODO switch to c or f
   celcius: "&#176;",
   fahrenheit: "&#8457;",
 };
@@ -251,9 +251,18 @@ function createForecastSection(data) {
 function createForecastDays(data) {
   const dayDiv = createDiv("day");
 
-  const condition = createSpan("day-condition", data.day.condition.text);
-  const mintemp = createSpan("day-min-temp", data.day.mintemp_c);
-  const maxtemp = createSpan("day-max-temp", data.day.maxtemp_c);
+  const condition = createImg(
+    "day-condition",
+    getWeatherIcon(data.day.condition.code)
+  );
+  const mintemp = createSpan(
+    `min-temp-${degrees.current}`,
+    `${data.day[`mintemp_${degrees.current}`]}`
+  );
+  const maxtemp = createSpan(
+    `max-temp-${degrees.current}`,
+    data.day[`maxtemp_${degrees.current}`]
+  );
 
   dayDiv.append(condition, mintemp, maxtemp);
   return dayDiv;
