@@ -22,6 +22,23 @@ const imagesAnimated = importAll(
   require.context("./images/animated", false, /\.(png|jpe?g|svg)$/)
 );
 
+const imagesUV = importAll(
+  require.context("./images/UV", false, /\.(png|jpe?g|svg)$/)
+);
+
+const uvImages = {
+  1: imagesUV["UV_1.svg"],
+  2: imagesUV["UV_2.svg"],
+  3: imagesUV["UV_3.svg"],
+  4: imagesUV["UV_4.svg"],
+  5: imagesUV["UV_5.svg"],
+  6: imagesUV["UV_6.svg"],
+  7: imagesUV["UV_7.svg"],
+  8: imagesUV["UV_8.svg"],
+  9: imagesUV["UV_9.svg"],
+  10: imagesUV["UV_10.svg"],
+};
+
 const weatherImages = {
   app_logo: images["app_logo.svg"],
   sunrise: images["sunrise.svg"],
@@ -35,6 +52,12 @@ const weatherImages = {
   sunny_snowy: imagesAnimated["snowy-1.svg"],
   snowy: imagesAnimated["snowy-5.svg"],
   thunder: imagesAnimated["thunder.svg"],
+  uv: images["uv.svg"],
+  wind: images["wind.svg"],
+  humidity: images["humidity.svg"],
+  chance_of_rain: images["chance-of-rain.svg"],
+  visibility: images["visibility.svg"],
+  cloud_percentage: images["cloud_percentage.svg"],
 };
 const weatherCodes = {
   1000: weatherImages.day,
@@ -173,51 +196,75 @@ function createWeatherSection(data) {
 
   // wind div
   const windDiv = createDiv("details");
-  const windParaHeader = createPara("Wind");
+  const windParaHeader = createImg(
+    "weather-img",
+    weatherImages.wind,
+    "wind speed"
+  );
   const windParaContent = createPara(`${data.current.wind_kph}m/s`);
   windDiv.append(windParaHeader, windParaContent);
 
   //humidity div
   const humidityDiv = createDiv("details");
-  const humidityParaHeader = createPara("Humidity");
+  const humidityParaHeader = createImg(
+    "weather-img",
+    weatherImages.humidity,
+    "humidity"
+  );
   const humidityParaContent = createPara(`${data.current.humidity}%`);
   humidityDiv.append(humidityParaHeader, humidityParaContent);
 
   // uv index div
   const uvDiv = createDiv("details");
-  const uvParaHeader = createPara("UV index");
-  const uvParaContent = createPara(`${data.current.uv}`);
+  const uvParaHeader = createImg("weather-img", weatherImages.uv, "UV index");
+  const uvParaContent = createImg(
+    "uv-img",
+    uvImages[`${data.current.uv}`],
+    `UV index: ${data.current.uv}`
+  );
   uvDiv.append(uvParaHeader, uvParaContent);
 
   // visibility div
   const visDiv = createDiv("details");
-  const visParaHeader = createPara("Visibility");
+  const visParaHeader = createImg(
+    "weather-img",
+    weatherImages.visibility,
+    "visibility"
+  );
   const visParaContent = createPara(`${data.current.vis_km}`);
   visDiv.append(visParaHeader, visParaContent);
 
   // cloudiness div
   const cloudDiv = createDiv("details");
-  const cloudParaHeader = createPara("Cloudiness");
+  const cloudParaHeader = createImg(
+    "weather-img",
+    weatherImages.cloud_percentage,
+    "cloudiness"
+  );
   const cloudParaContent = createPara(`${data.current.cloud}%`);
   cloudDiv.append(cloudParaHeader, cloudParaContent);
 
   //chance of rain div
   const rainChanceDiv = createDiv("details");
-  const rainChanceParaHeader = createPara("Chance of rain");
+  const rainChanceParaHeader = createImg(
+    "weather-img",
+    weatherImages.chance_of_rain,
+    "chance of rain"
+  );
   const rainChanceParaContent = createPara(`${data.current.chance_of_rain}%`);
   rainChanceDiv.append(rainChanceParaHeader, rainChanceParaContent);
 
   // sunrise div
   const sunriseDiv = createDiv("details");
   // const sunriseParaHeader = createPara("Sunrise");
-  const sunriseImg = createImg("weather-img", weatherImages.sunrise);
+  const sunriseImg = createImg("weather-img", weatherImages.sunrise, "sunrise");
   const sunriseParaContent = createPara(`${data.current.sunrise}`);
   sunriseDiv.append(sunriseImg, sunriseParaContent);
 
   // sunset div
   const sunsetDiv = createDiv("details");
   // const sunsetParaHeader = createPara("Sunset");
-  const sunsetImg = createImg("weather-img", weatherImages.sunset);
+  const sunsetImg = createImg("weather-img", weatherImages.sunset, "sunset");
   const sunsetParaContent = createPara(`${data.current.sunset}`);
   sunsetDiv.append(sunsetImg, sunsetParaContent);
 
@@ -283,10 +330,11 @@ function createHeaderSection(data) {
   return sectionHeader;
 }
 
-function createImg(className, imgData) {
+function createImg(className, imgData, imgAlt) {
   const img = document.createElement("img");
   img.classList.add(className);
   img.src = imgData;
+  img.title = imgAlt;
 
   return img;
 }
