@@ -8,8 +8,8 @@ async function fetchWeatherData(location = "istanbul") {
 
     const response = await fetch(weather_api);
     const weatherData = await response.json();
-    console.log(weather_api);
-    console.log(weatherData);
+    // console.log(weather_api);
+    // console.log(weatherData);
     return weatherData;
   } catch (err) {
     console.log(err);

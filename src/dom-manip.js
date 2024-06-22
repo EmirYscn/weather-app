@@ -1,9 +1,6 @@
 import { getWeatherData } from "./fetch-weather-data";
 import { getDateAsDay, getDateAsHour, getFormattedDate } from "./date-manip";
-
-const degrees = {
-  current: "c", // TODO switch to c or f
-};
+import { degrees } from "../degree-toggle";
 
 function importAll(r) {
   let images = {};
@@ -119,23 +116,28 @@ function getWeatherIcon(weatherCode) {
   return weatherCodes[code];
 }
 
+function updateDomWithCurrentData() {
+  const searchInput = document.querySelector(".search-input");
+
+  if (searchInput.value) {
+    getWeatherData(searchInput.value).then((data) => {
+      console.log(`Data for ${data.location.name}: `, data);
+      updateDom(data);
+    });
+  }
+}
+
 function initializeSearchHandlers() {
   const searchInput = document.querySelector(".search-input");
   const searchButton = document.querySelector(".search-icon");
 
   searchButton.addEventListener("click", () => {
-    getWeatherData(searchInput.value).then((data) => {
-      console.log(data);
-      updateDom(data);
-    });
+    updateDomWithCurrentData();
   });
 
   searchInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
-      getWeatherData(searchInput.value).then((data) => {
-        console.log(data);
-        updateDom(data);
-      });
+      updateDomWithCurrentData();
     }
   });
 }
@@ -413,4 +415,4 @@ function createDiv(className) {
   return div;
 }
 
-export { initializeSearchHandlers };
+export { initializeSearchHandlers, updateDomWithCurrentData };
