@@ -1,9 +1,8 @@
 import { getWeatherData } from "./fetch-weather-data";
+import { getDateAsDay, getFormattedDate } from "./date-manip";
 
 const degrees = {
   current: "c", // TODO switch to c or f
-  celcius: "&#176;",
-  fahrenheit: "&#8457;",
 };
 
 function importAll(r) {
@@ -163,9 +162,6 @@ function createWeatherSection(data) {
   const weatherMainTop = createDiv("weather-main-top");
   const weatherMainBottom = createDiv("weather-main-bottom");
 
-  console.log(getWeatherIcon(data.current.condition.code));
-  console.log(images);
-  console.log(imagesAnimated);
   // create weather data divs for weather main div
   const iconWeather = createImg(
     "icon-weather",
@@ -297,6 +293,12 @@ function createForecastSection(data) {
 
 function createForecastDays(data) {
   const dayDiv = createDiv("day");
+  const topDiv = createDiv("day-top-div");
+  const bottomDiv = createDiv("day-bottom-div");
+  const leftBottomDiv = createDiv("day-left-bottom-div");
+  const rightBottomDiv = createDiv("day-right-bottom-div");
+
+  const dayDate = createSpan("day-date", getDateAsDay(data.date));
 
   const condition = createImg(
     "day-condition",
@@ -311,7 +313,12 @@ function createForecastDays(data) {
     data.day[`maxtemp_${degrees.current}`]
   );
 
-  dayDiv.append(condition, mintemp, maxtemp);
+  leftBottomDiv.append(condition);
+  rightBottomDiv.append(mintemp, maxtemp);
+
+  topDiv.appendChild(dayDate);
+  bottomDiv.append(leftBottomDiv, rightBottomDiv);
+  dayDiv.append(topDiv, bottomDiv);
   return dayDiv;
 }
 
@@ -322,7 +329,7 @@ function createHeaderSection(data) {
   locationHeader.textContent = `${data.location.name}, ${data.location.country}`;
 
   const dateHeader = document.createElement("h2");
-  dateHeader.textContent = `${data.location.localtime}`;
+  dateHeader.textContent = getFormattedDate(data.location.localtime);
 
   sectionHeader.appendChild(locationHeader);
   sectionHeader.appendChild(dateHeader);
