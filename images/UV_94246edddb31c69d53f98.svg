@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
+
+<defs fill="#000000">
+</defs>
+<g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+	<linearGradient id="SVGID_1" gradientUnits="userSpaceOnUse" x1="45" y1="84.7883" x2="45" y2="4.2607" fill="#000000">
+<stop offset="0%" style="stop-color:#ff3c00;stop-opacity: 1" fill="#000000"/>
+<stop offset="100%" style="stop-color:#eb884c;stop-opacity: 1" fill="#000000"/>
+</linearGradient>
+<circle cx="45" cy="45" r="45" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: url(#SVGID_1); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
+	<path d="M 50.544 50.528 c -2.428 2.183 -5.144 3.273 -8.15 3.273 c -4.409 0 -7.905 -1.491 -10.488 -4.475 c -2.583 -2.983 -3.874 -6.968 -3.874 -11.957 c 0 -3.118 0.723 -6.012 2.171 -8.684 c 1.447 -2.672 3.479 -4.788 6.095 -6.346 C 38.915 20.78 41.804 20 44.967 20 c 3.206 0 6.106 0.807 8.7 2.421 c 2.594 1.615 4.614 3.897 6.062 6.847 c 1.448 2.951 2.194 6.352 2.238 10.204 v 4.308 c 0 5.367 -1.052 10.02 -3.156 13.962 c -2.104 3.941 -5.105 6.97 -9.001 9.085 C 45.913 68.943 41.37 70 36.182 70 h -0.702 v -9.017 l 2.138 -0.033 C 45.367 60.571 49.676 57.097 50.544 50.528 z M 45.434 45.685 c 2.449 0 4.208 -1.058 5.277 -3.173 v -4.676 c 0 -3.117 -0.524 -5.422 -1.571 -6.914 c -1.046 -1.491 -2.46 -2.238 -4.241 -2.238 c -1.582 0 -2.906 0.846 -3.975 2.538 s -1.603 3.741 -1.603 6.146 c 0 2.539 0.546 4.559 1.637 6.062 C 42.049 44.933 43.541 45.685 45.434 45.685 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+</g>
+</svg>
