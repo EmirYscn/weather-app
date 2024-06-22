@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<svg width="512.001" height="512.001" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" version="1.1" xml:space="preserve">
+ <g class="layer">
+  <title>Layer 1</title>
+  <path d="m464.02,192.04c0.16,-1.94 0.24,-3.89 0.24,-5.84c0,-40.74 -33.15,-73.89 -73.89,-73.89c-3.66,0 -7.29,0.27 -10.88,0.8c-15.52,-35.15 -50.19,-58.09 -89.39,-58.09c-53.9,0 -97.76,43.86 -97.76,97.76c0,2.96 0.14,5.92 0.4,8.86c-16.6,3.26 -31.82,11.49 -43.8,23.88c-15.11,15.63 -23.44,36.22 -23.44,57.98c0,46 37.43,83.44 83.44,83.44l233.95,0c38.11,0 69.11,-31.01 69.11,-69.12c0,-30.28 -19.94,-56.72 -47.98,-65.78z" fill="#6FC8F1" id="svg_1"/>
+  <path d="m464.02,192.04c0.16,-1.94 0.24,-3.89 0.24,-5.84c0,-40.74 -33.15,-73.89 -73.89,-73.89c-3.66,0 -7.29,0.27 -10.88,0.8c-15.52,-35.15 -50.19,-58.09 -89.39,-58.09c-12.16,0 -23.8,2.25 -34.55,6.33l0,265.58l187.34,0c38.11,0 69.11,-31 69.11,-69.11c0,-30.28 -19.94,-56.72 -47.98,-65.78z" fill="#4BBAED" id="svg_2"/>
+  <path d="m388.9,303.7c0.27,-2.7 0.4,-5.41 0.4,-8.13c0,-46.23 -37.61,-83.84 -83.84,-83.84c-4.64,0 -9.24,0.38 -13.78,1.13c-17.41,-40.86 -57.36,-67.61 -102.57,-67.61c-61.51,0 -111.55,50.03 -111.55,111.54c0,3.96 0.21,7.91 0.63,11.83c-19.55,3.47 -37.49,12.97 -51.52,27.48c-17.2,17.78 -26.67,41.21 -26.67,65.96c0,52.34 42.58,94.92 94.92,94.92l271.48,0c43.17,0 78.3,-35.13 78.3,-78.31c0,-34.81 -23.27,-65.16 -55.8,-74.97z" fill="#B7E4F8" id="svg_3"/>
+  <path d="m388.9,303.7c0.27,-2.7 0.4,-5.41 0.4,-8.13c0,-46.23 -37.61,-83.84 -83.84,-83.84c-4.64,0 -9.24,0.38 -13.78,1.13c-7.92,-18.59 -20.51,-34.24 -36.13,-45.8l0,289.92l110.85,0c43.18,0 78.3,-35.13 78.3,-78.3c0,-34.82 -23.27,-65.17 -55.8,-74.98z" fill="#93D6F4" id="svg_4"/>
+  <text fill="#ffffff" font-family="Courier" font-size="24" id="svg_5" stroke="#000000" stroke-width="0" text-anchor="middle" x="332.5" xml:space="preserve" y="315"/>
+  <text fill="#ffffff" font-family="Courier" font-size="24" id="svg_6" stroke="#000000" stroke-width="0" text-anchor="middle" x="329.5" xml:space="preserve" y="254"/>
+  <text fill="#ffffff" font-family="Courier" font-size="24" id="svg_7" stroke="#000000" stroke-width="0" text-anchor="middle" x="26.5" xml:space="preserve" y="158"/>
+  <text fill="#ffffff" font-family="Courier" font-size="24" id="svg_8" stroke="#000000" stroke-width="0" text-anchor="middle" x="138.5" xml:space="preserve" y="284"/>
+  <text fill="#ffffff" font-family="Courier" font-size="24" id="svg_9" stroke="#000000" stroke-width="0" text-anchor="middle" x="214.5" xml:space="preserve" y="282"/>
+  <text fill="#ffffff" font-family="Courier" font-size="24" id="svg_10" stroke="#000000" stroke-width="0" text-anchor="middle" x="212.5" xml:space="preserve" y="282"/>
+  <text fill="#ffffff" font-family="Courier" font-size="24" id="svg_11" stroke="#000000" stroke-width="0" text-anchor="middle" x="52.5" xml:space="preserve" y="101"/>
+  <text fill="#ffffff" font-family="Courier" font-size="24" id="svg_12" stroke="#000000" stroke-width="0" text-anchor="middle" x="-193.5" xml:space="preserve" y="101"/>
+  <ellipse cx="52.5" cy="168" fill="#ffffff" id="svg_13" opacity="0.5" rx="0" ry="0" stroke="#000000" stroke-width="0"/>
+  <ellipse cx="174.5" cy="249" fill="#ffffff" id="svg_14" opacity="0.5" rx="0" ry="0" stroke="#000000" stroke-width="0"/>
+  <text fill="#ffffff" font-family="Courier" font-size="24" id="svg_15" stroke="#000000" stroke-width="0" text-anchor="middle" transform="rotate(-30 314.922 349.375) matrix(13.7484 0 0 13.7484 -3605.55 -3558.56)" x="285.16" xml:space="preserve" y="292.16">%</text>
+ </g>
+</svg>
