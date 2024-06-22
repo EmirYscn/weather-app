@@ -33,6 +33,7 @@ function processData(data) {
             mintemp_c: data.forecast.forecastday[1].day.mintemp_c,
             mintemp_f: data.forecast.forecastday[1].day.mintemp_f,
           },
+          hour: [...data.forecast.forecastday[1].hour],
         },
         {
           date: data.forecast.forecastday[2].date,
@@ -47,6 +48,7 @@ function processData(data) {
             mintemp_c: data.forecast.forecastday[2].day.mintemp_c,
             mintemp_f: data.forecast.forecastday[2].day.mintemp_f,
           },
+          hour: [...data.forecast.forecastday[2].hour],
         },
         {
           date: data.forecast.forecastday[3].date,
@@ -61,6 +63,7 @@ function processData(data) {
             mintemp_c: data.forecast.forecastday[3].day.mintemp_c,
             mintemp_f: data.forecast.forecastday[3].day.mintemp_f,
           },
+          hour: [...data.forecast.forecastday[3].hour],
         },
       ],
     },

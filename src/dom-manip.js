@@ -1,5 +1,5 @@
 import { getWeatherData } from "./fetch-weather-data";
-import { getDateAsDay, getFormattedDate } from "./date-manip";
+import { getDateAsDay, getDateAsHour, getFormattedDate } from "./date-manip";
 
 const degrees = {
   current: "c", // TODO switch to c or f
@@ -165,7 +165,8 @@ function createWeatherSection(data) {
   // create weather data divs for weather main div
   const iconWeather = createImg(
     "icon-weather",
-    getWeatherIcon(data.current.condition.code)
+    getWeatherIcon(data.current.condition.code),
+    data.current.condition.text
   );
 
   const tempWeather = createSpan(
@@ -297,12 +298,14 @@ function createForecastDays(data) {
   const bottomDiv = createDiv("day-bottom-div");
   const leftBottomDiv = createDiv("day-left-bottom-div");
   const rightBottomDiv = createDiv("day-right-bottom-div");
+  const hourlyDiv = createHourly(data);
 
   const dayDate = createSpan("day-date", getDateAsDay(data.date));
 
   const condition = createImg(
     "day-condition",
-    getWeatherIcon(data.day.condition.code)
+    getWeatherIcon(data.day.condition.code),
+    data.day.condition.text
   );
   const mintemp = createSpan(
     `min-temp-${degrees.current}`,
@@ -317,9 +320,48 @@ function createForecastDays(data) {
   rightBottomDiv.append(mintemp, maxtemp);
 
   topDiv.appendChild(dayDate);
-  bottomDiv.append(leftBottomDiv, rightBottomDiv);
+  bottomDiv.append(leftBottomDiv, rightBottomDiv, hourlyDiv);
   dayDiv.append(topDiv, bottomDiv);
+
+  dayDiv.addEventListener("click", () => {
+    const hourlyDivs = document.querySelectorAll(".hourly-div");
+    const isHidden = hourlyDiv.classList.contains("hidden");
+
+    hourlyDivs.forEach((element) => {
+      element.classList.add("hidden");
+      element.classList.remove("visible");
+    });
+
+    if (isHidden) {
+      hourlyDiv.classList.remove("hidden");
+      hourlyDiv.classList.add("visible");
+    } else {
+      hourlyDiv.classList.add("hidden");
+      hourlyDiv.classList.remove("visible");
+    }
+  });
   return dayDiv;
+}
+
+function createHourly(data) {
+  const hourlyDiv = createDiv("hourly-div");
+  hourlyDiv.classList.add("hidden");
+  data.hour.forEach((hour) => {
+    const div = createDiv("hour");
+    const time = createSpan("hour-time", getDateAsHour(hour.time));
+    const condition = createImg(
+      "icon-weather-hourly",
+      getWeatherIcon(hour.condition.code),
+      hour.condition.text
+    );
+    const temp = createSpan(
+      `temp-weather-${degrees.current}`,
+      hour[`temp_${degrees.current}`]
+    );
+    div.append(time, condition, temp);
+    hourlyDiv.appendChild(div);
+  });
+  return hourlyDiv;
 }
 
 function createHeaderSection(data) {
@@ -362,7 +404,11 @@ function createSpan(className, text) {
 
 function createDiv(className) {
   const div = document.createElement("div");
+  // className.forEach((element) => {
+  //   div.classList.add(element);
+  // });
   div.classList.add(className);
+  console.log();
 
   return div;
 }

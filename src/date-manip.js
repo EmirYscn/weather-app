@@ -12,4 +12,9 @@ function getFormattedDate(date) {
   return newDate;
 }
 
-export { getDateAsDay, getFormattedDate };
+function getDateAsHour(date) {
+  const newDate = format(new Date(date), "HH:mm");
+  return newDate;
+}
+
+export { getDateAsDay, getFormattedDate, getDateAsHour };
